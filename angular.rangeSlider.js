@@ -60,9 +60,9 @@
                 attachHandleValues: false
             },
 
-            onEvent = (EVENT === 1 ? 'pointerdown' : (EVENT === 2 ? 'MSPointerDown' : (EVENT === 3 ? 'touchstart' : 'mousedown'))) + eventNamespace,
-            moveEvent = (EVENT === 1 ? 'pointermove' : (EVENT === 2 ? 'MSPointerMove' : (EVENT === 3 ? 'touchmove' : 'mousemove'))) + eventNamespace,
-            offEvent = (EVENT === 1 ? 'pointerup' : (EVENT === 2 ? 'MSPointerUp' : (EVENT === 3 ? 'touchend' : 'mouseup'))) + eventNamespace,
+            onEvent = (EVENT === 1 ? 'pointerdown' + eventNamespace : (EVENT === 2 ? 'MSPointerDown' + eventNamespace : (EVENT === 3 ? 'touchstart' + eventNamespace + ' mousedown' + eventNamespace : 'mousedown' + eventNamespace))),
+            moveEvent = (EVENT === 1 ? 'pointermove' + eventNamespace : (EVENT === 2 ? 'MSPointerMove' + eventNamespace : (EVENT === 3 ? 'touchmove' + eventNamespace + ' mousemove' + eventNamespace : 'mousemove' + eventNamespace))),
+            offEvent = (EVENT === 1 ? 'pointerup' + eventNamespace : (EVENT === 2 ? 'MSPointerUp' + eventNamespace : (EVENT === 3 ? 'touchend' + eventNamespace + ' mouseup' + eventNamespace : 'mouseup' + eventNamespace))),
 
             // get standarised clientX and clientY
             client = function (f) {
